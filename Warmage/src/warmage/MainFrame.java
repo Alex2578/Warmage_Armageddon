@@ -153,6 +153,9 @@ public class MainFrame extends JFrame {
 				+ sourceUnit.getDefense() + "<br>Mana: " + sourceUnit.getMana()
 				+ "<br>Damage: " + sourceUnit.getDamage() + "<br>Speed: "
 				+ sourceUnit.getSpeed() + "</html>");
+		
+		infoPane.remove(4);
+		infoPane.add(sourceUnit.getMoveButton(), 4);
 	}
 
 	public static void displayTerrainInformation(int pi) {
@@ -164,6 +167,10 @@ public class MainFrame extends JFrame {
 
 		((JLabel) infoPane.getComponent(3)).setText("<html>Terrain Name: "
 				+ sourceTerrain.getTerrainName() + "</html>");
+		
+		infoPane.remove(4);
+		JButton terrainDoNothingOne = new JButton("Do Nothing");
+		infoPane.add(terrainDoNothingOne, 4);
 	}
 
 	public static void generateHighlight(int pos, int spd) {

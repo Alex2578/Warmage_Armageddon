@@ -1,5 +1,10 @@
 package warmage;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+
 public class NoviceMagician extends GenericUnit {
 
 	public NoviceMagician(String pN, int pi) {
@@ -35,5 +40,16 @@ public class NoviceMagician extends GenericUnit {
 	@Override
 	protected void setUnitType() {
 		unitType = 1;
+	}
+	
+	@Override
+	protected void setMoveButton() {
+		moveButton.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				System.out.println("You are moving!!!");
+			}
+		});
 	}
 }
