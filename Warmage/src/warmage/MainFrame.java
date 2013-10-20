@@ -277,7 +277,7 @@ public class MainFrame extends JFrame {
 			for (int i = 0; i < unitsPane.getComponentCount(); i++) {
 				temp = (GenericUnit) unitsPane.getComponent(i);
 				if (temp.getUnitType() > 0
-						&& !temp.getPlayerName().equals("Player 2")) {
+						&& !temp.getPlayerName().equals("Player2")) {
 					temp.setVisible(false);
 				} else if (temp.getUnitType() > 0) {
 					temp.setVisible(true);
@@ -290,7 +290,7 @@ public class MainFrame extends JFrame {
 			for (int i = 0; i < unitsPane.getComponentCount(); i++) {
 				if (((GenericUnit) unitsPane.getComponent(i)).getUnitType() == 1
 						&& ((GenericUnit) unitsPane.getComponent(i))
-								.getPlayerName().equals("Player 2")) {
+								.getPlayerName().equals("Player2")) {
 					p2Start = i;
 					break;
 				}
@@ -299,7 +299,7 @@ public class MainFrame extends JFrame {
 			for (int i = 0; i < unitsPane.getComponentCount(); i++) {
 				if (((GenericUnit) unitsPane.getComponent(i)).getUnitType() > 0
 						&& ((GenericUnit) unitsPane.getComponent(i))
-								.getPlayerName().equals("Player 2")) {
+								.getPlayerName().equals("Player2")) {
 					updateVision(i);
 				}
 			}
@@ -313,7 +313,7 @@ public class MainFrame extends JFrame {
 			for (int i = 0; i < unitsPane.getComponentCount(); i++) {
 				temp = (GenericUnit) unitsPane.getComponent(i);
 				if (temp.getUnitType() > 0
-						&& !temp.getPlayerName().equals("Player 1")) {
+						&& !temp.getPlayerName().equals("Player1")) {
 					temp.setVisible(false);
 				} else if (temp.getUnitType() > 0) {
 					temp.setVisible(true);
@@ -326,7 +326,7 @@ public class MainFrame extends JFrame {
 			for (int i = 0; i < unitsPane.getComponentCount(); i++) {
 				if (((GenericUnit) unitsPane.getComponent(i)).getUnitType() == 1
 						&& ((GenericUnit) unitsPane.getComponent(i))
-								.getPlayerName().equals("Player 1")) {
+								.getPlayerName().equals("Player1")) {
 					p1Start = i;
 					break;
 				}
@@ -335,7 +335,7 @@ public class MainFrame extends JFrame {
 			for (int i = 0; i < unitsPane.getComponentCount(); i++) {
 				if (((GenericUnit) unitsPane.getComponent(i)).getUnitType() > 0
 						&& ((GenericUnit) unitsPane.getComponent(i))
-								.getPlayerName().equals("Player 1")) {
+								.getPlayerName().equals("Player1")) {
 					updateVision(i);
 				}
 			}
@@ -529,7 +529,7 @@ public class MainFrame extends JFrame {
 		for (int i = 0; i < unitsPane.getComponentCount(); i++) {
 			temp = (GenericUnit) unitsPane.getComponent(i);
 			if (temp.getUnitType() > 0
-					&& !temp.getPlayerName().equals("Player 1")) {
+					&& !temp.getPlayerName().equals("Player1")) {
 				temp.setVisible(false);
 			}
 		}
@@ -1107,12 +1107,18 @@ public class MainFrame extends JFrame {
 				* 144;
 		int p2Start = (int) (72 + Math.random() * 72)
 				+ (int) ((Math.random() * 72) + 72) * 144;
-		GenericUnit player1 = new NoviceMagician("Player 1", p1Start);
-		GenericUnit player2 = new NoviceMagician("Player 2", p2Start);
+		GenericUnit player1 = new NoviceMagician("Player1", p1Start);
+		GenericUnit player2 = new NoviceMagician("Player2", p2Start);
+		GenericUnit torak1 = new TorakEres("Player1", p1Start - 1);
+		GenericUnit torak2 = new TorakEres("Player2", p2Start - 1);
 		unitsPane.remove(p1Start);
 		unitsPane.add(player1, p1Start);
 		unitsPane.remove(p2Start);
 		unitsPane.add(player2, p2Start);
+		unitsPane.remove(p1Start - 1);
+		unitsPane.add(torak1, p1Start - 1);
+		unitsPane.remove(p2Start - 1);
+		unitsPane.add(torak2, p2Start - 1);
 		unitsPane.revalidate();
 		unitsPane.repaint();
 	}

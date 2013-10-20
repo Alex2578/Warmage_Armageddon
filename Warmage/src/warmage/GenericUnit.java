@@ -16,12 +16,15 @@ public class GenericUnit extends JButton implements MouseListener {
 	protected ImageIcon unitIcon, unitHL;
 	protected int positionIndex, unitType;
 	protected String unitName, playerName;
-	protected int hitPoints, attack, defense, mana, damage, speed, vision;
+	protected int hitPoints, attack, defense, mana, damage, speed, vision, intelligenceAtt, pierceAtt, pierceDam, intelligenceDef, soulAffinity,
+	hoardingAptitude, healthRegeneration, calmingAura, disillusionment, holy, dark, spellStrength, affinity, bravery, earthResist, 
+	constructionGrade, heatThreshold, liquidThreshold, nullification, strength, agility, stability, padding, shell, reinforcement, health, 
+	magicPoints, numberOfAttacks, sightRadius, movementSpeed, productionCost, range, squaresOccupied;
 	protected JButton moveButton = new JButton("Move");
-
 	public GenericUnit(GenericUnit toCopy) {
 		super();
 		addMouseListener(this);
+		
 		positionIndex = toCopy.getPositionIndex();
 		unitName = toCopy.getUnitName();
 		unitIcon = toCopy.getUnitIcon();
@@ -90,6 +93,10 @@ public class GenericUnit extends JButton implements MouseListener {
 
 	public int getVision() {
 		return vision;
+	}
+
+	public int getRange() {
+			return range;
 	}
 
 	@Override
