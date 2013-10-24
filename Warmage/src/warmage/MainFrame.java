@@ -1275,25 +1275,25 @@ public class MainFrame extends JFrame {
 
 				}
 
-				if (x < 5 && y > 5 && y < screenSize.height - 5) {
+				if (x < 5 && y > 5 && y < screenSize.height * 0.75) {
 					scrollLeft();
 				}
 
-				if (x < 1 && y > screenSize.height - 1) {
+				if (x < 1 && y < screenSize.height * 0.84 && y > screenSize.height * 0.75) {
 					scrollSouthWest();
 				}
 
 				if (x > 5 && x < screenSize.width - 5
-						&& y > screenSize.height - 5) {
+						&& y == screenSize.height -1){ //* 0.84 && y > screenSize.height * 0.75) {
 					scrollDown();
 				}
 
-				if (x > screenSize.width - 5 && y > screenSize.height - 5) {
+				if (x > screenSize.width - 5 && y < screenSize.height * 0.84 && y > screenSize.height * 0.75) {
 					scrollSouthEast();
 				}
 
 				if (x > screenSize.width - 5 && y > 5
-						&& y < screenSize.height - 5) {
+						&& y < screenSize.height * 0.75) {
 					scrollRight();
 				}
 
